@@ -1,0 +1,93 @@
+package clases;
+
+import java.util.ArrayList;
+import java.util.List;
+
+// Clase Cliente para representar a los clientes del servicio de fotomago
+class cliente {
+    private int idCliente;
+    private String direccion;
+    private String idNombre;
+    private int idTelefono;
+
+    // Constructor
+    public cliente(int idCliente, String direccion, String idNombre, int idTelefono) {
+        this.idCliente = idCliente;
+        this.direccion = direccion;
+        this.idNombre = idNombre;
+        this.idTelefono = idTelefono;
+    }
+
+    // Métodos de acceso (getters y setters)
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getIdNombre() {
+        return idNombre;
+    }
+
+    public void setIdNombre(String idNombre) {
+        this.idNombre = idNombre;
+    }
+
+    public int getIdTelefono() {
+        return idTelefono;
+    }
+
+    public void setIdTelefono(int idTelefono) {
+        this.idTelefono = idTelefono;
+    }
+}
+
+// Clase que representa el modelo estructural
+class Fotomagodb {
+    private List<cliente> listaclientes;
+
+    public Fotomagodb() {
+        listaclientes = new ArrayList<>();
+    }
+
+    public void agregarCliente(cliente cliente) {
+        listaclientes.add(cliente);
+    }
+
+    public void mostrarClientes() {
+        System.out.println("Lista de clientes del servicio Fotomago:");
+        for (cliente cliente : listaclientes) {
+            System.out.println("idCliente: " + cliente.getIdCliente() + ", Direccion: " + cliente.getDireccion() +
+                               ", Nombre: " + cliente.getIdNombre() + ", Telefono: " + cliente.getIdTelefono());
+        }
+    }
+}
+
+// Clase que actúa como emulado
+    public class cliente {
+        public static void main(String[] args) {
+        Fotomagodb servicioFotomagodb = new Fotomagodb();
+
+        // Emulador: Agregar clientes
+        
+         // Emulador: Agregar clientes
+        servicioFotomagodb.agregarcliente(new cliente("1235", "Carrera2211Sabanita", "Adriana Diaz Muñoz", "321456789"));
+        servicioFotomagodb.agregarcliente(new cliente("1236", "Avenidab211Barahoja", "Jair Lobo Alvarado", "3103346578"));
+        servicioFotomagodb.agregarcliente(new cliente("1237", "Calle27_06Sanpedro", "Karen Palacios Rios", "3156789000"));
+        servicioFotomagodb.agregarcliente(new cliente("1238", "Carrera21_2_41 Mariaeugenia", "Oyiuso Anderzo Neuto", "3145558682"));
+
+        // Emulador: Mostrar clientes
+        servicioFotomagodb.mostrarclientes();
+    }
+}
+
